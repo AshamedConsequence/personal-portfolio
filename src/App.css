@@ -1,38 +1,142 @@
-.App {
+:root {
+  --mainColor: #eeeeee;
+
+  --borderColor: #c1c1c1;
+
+  --mainText: black;
+  --secondaryText: #282828;
+  background-color: var(--mainColor);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--mainText);
+  font-family: "Inconsolata", monospace;
+  padding-left: 15px;
+}
+
+h1 {
+  font-size: 56px;
+}
+h2 {
+  font-size: 36px;
+}
+h3 {
+  font-size: 28px;
+}
+h4 {
+  font-size: 24px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: teal;
+}
+
+ul {
+  list-style: none;
+}
+
+p,
+li,
+span,
+label,
+input,
+textarea {
+  font-family: "Roboto Mono", monospace;
+  padding: 15px;
+  color: var(--secondaryText);
+}
+
+.s1 {
+  border-bottom: 1px solid var(--borderColor);
+  overflow: auto;
+}
+
+.s2 {
+  border-bottom: 1px solid var(--borderColor);
+  overflow: auto;
+}
+/* TODO */
+/* Find better way to center components */
+
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .main-container {
+    width: 95%;
+  }
+}
+
+.greeting {
+  display: grid;
   text-align: center;
+  align-content: center;
+  min-height: 90vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.about {
+  display: grid;
+  align-content: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+body * {
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.info-grid {
+  border: 1px solid var(--borderColor);
+  -webkit-box-shadow: 20px 20px 14px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 20px 20px 14px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 20px 20px 14px -1px rgba(0, 0, 0, 0.75);
+  /* TODO */
+  /* Clean this shit up */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "logo logo logo logo me me me me me me"
+    "knowledge knowledge knowledge knowledge knowledge projects projects projects projects projects";
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.me {
+  grid-area: me;
+  border: 1px dashed lightcoral;
+}
+
+.knowledge {
+  grid-area: knowledge;
+  border: 1px dashed lightcoral;
+}
+.projects {
+  grid-area: projects;
+  border: 1px dashed lightcoral;
+}
+
+.logo {
+  grid-area: logo;
+  text-align: center;
+  border: 1px dashed lightcoral;
+}
+
+#profile-pic {
+  display: block;
+  margin: 3rem auto;
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid var(--borderColor);
 }
