@@ -1,5 +1,5 @@
 :root {
-  --mainColor: #eeeeee;
+  --mainColor: #e1d9c2;
 
   --borderColor: #c1c1c1;
 
@@ -103,18 +103,19 @@ body * {
   -webkit-box-shadow: 20px 20px 14px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 20px 20px 14px -1px rgba(0, 0, 0, 0.75);
   box-shadow: 20px 20px 14px -1px rgba(0, 0, 0, 0.75);
-  /* TODO */
-  /* Clean this shit up */
+
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "logo logo logo logo me me me me me me"
-    "knowledge knowledge knowledge knowledge knowledge projects projects projects projects projects";
+    "logo me"
+    "knowledge projects";
 }
 
 .me {
   grid-area: me;
-  border: 1px dashed lightcoral;
+  display: grid;
+  align-content: center;
+  justify-content: center;
 }
 
 .knowledge {
@@ -139,4 +140,37 @@ body * {
   height: auto;
   object-fit: cover;
   border: 2px solid var(--borderColor);
+}
+
+#card {
+  width: 400px;
+  border: 1.5px solid #17a2b8;
+  position: relative;
+}
+
+.corner {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--mainColor);
+  border: 1px solid teal;
+  position: absolute;
+}
+
+#tl {
+  top: -5px;
+  left: -5px;
+}
+
+#tr {
+  top: -5px;
+  right: -5px;
+}
+#bl {
+  bottom: -5px;
+  left: -5px;
+}
+#br {
+  bottom: -5px;
+  right: -5px;
 }
